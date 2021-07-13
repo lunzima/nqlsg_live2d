@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>农企临时工_Official Demo</title>
+</head>
+<body>
+    <div class="Canvas" style="position: fixed; right: 0px; bottom: 0px; z-index: 99999999" id="L2dCanvas"></div>
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8.2.0/dist/polyfill.min.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/howler@2.2.1/dist/howler.min.js"></script>
+    <script src="https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pixi.js@4.8.9/dist/pixi.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/lunzima/nqlsg_live2d/live2dv3.js"></script>
+    <script>
+        window.onload = () => {
+            new l2dViewer({
+                el: document.getElementById('L2dCanvas'),
+                basePath: 'https://cdn.jsdelivr.net/gh/lunzima/nqlsg_live2d/',
+                modelName: 'model',
+                sizeLimit: false,
+                mobileLimit: false,
+				width: 1000,
+				height: 600,
+            })
+        }
+    </script>
+</body>
+</html>
