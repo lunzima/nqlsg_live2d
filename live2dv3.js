@@ -567,7 +567,7 @@
       Physics.gravity = new PhysicsVector2(0, -1)
       Physics.wind = new PhysicsVector2(0, 0)
       Physics.maximumWeight = 100
-      Physics.airResistance = 5
+      Physics.airResistance = 1
       Physics.movementThreshold = 0.001
       Physics.correctAngles = true
       return Physics
@@ -828,12 +828,26 @@
         physics3Json.PhysicsSettings.forEach(function (r) {
           var input = []
           r.Input.forEach(function (i) {
-            var factor = new PhysicsFactorTuple(0.5, 0.5, 0.5)
+            var factor = new PhysicsFactorTuple(0.5, 0, 0)
+            if (i.Type === 'Y') {
+              factor.x = 0
+              factor.y = 0.5
+            } else if (i.Type === 'Angle') {
+              factor.x = 0
+              factor.angle = 0.5
+            }
             input.push(new PhysicsInput(i.Source.Id, i.Weight, factor, i.Reflect))
           })
           var output = []
           r.Output.forEach(function (o) {
-            var factor = new PhysicsFactorTuple(0.5, 0.5, 0.5)
+            var factor = new PhysicsFactorTuple(0.5, 0, 0)
+            if (o.Type === 'Y') {
+              factor.x = 0
+              factor.y = 0.5
+            } else if (o.Type === 'Angle') {
+              factor.x = 0
+              factor.angle = 0.5
+            }
             output.push(new PhysicsOutput(o.Destination.Id, o.VertexIndex, o.Weight, o.Scale, factor, o.Reflect))
           })
           var particles = []
