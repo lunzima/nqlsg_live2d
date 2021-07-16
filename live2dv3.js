@@ -828,25 +828,29 @@
         physics3Json.PhysicsSettings.forEach(function (r) {
           var input = []
           r.Input.forEach(function (i) {
-            var factor = new PhysicsFactorTuple(1, 0, 0)
+            var factor = new PhysicsFactorTuple(0, 0, 0)
             if (i.Type === 'Y') {
               factor.x = 0
-              factor.y = 1
+              factor.y = 0
+			  factor.angle = 0
             } else if (i.Type === 'Angle') {
               factor.x = 0
-              factor.angle = 1
+              factor.y = 0
+			  factor.angle = 0
             }
             input.push(new PhysicsInput(i.Source.Id, i.Weight, factor, i.Reflect))
           })
           var output = []
           r.Output.forEach(function (o) {
-            var factor = new PhysicsFactorTuple(1, 0, 0)
+            var factor = new PhysicsFactorTuple(0, 0, 0)
             if (o.Type === 'Y') {
               factor.x = 0
-              factor.y = 1
+              factor.y = 0
+			  factor.angle = 0
             } else if (o.Type === 'Angle') {
               factor.x = 0
-              factor.angle = 1
+              factor.y = 0
+			  factor.angle = 0
             }
             output.push(new PhysicsOutput(o.Destination.Id, o.VertexIndex, o.Weight, o.Scale, factor, o.Reflect))
           })
