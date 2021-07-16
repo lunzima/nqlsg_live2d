@@ -567,7 +567,7 @@
       Physics.gravity = new PhysicsVector2(0, -1)
       Physics.wind = new PhysicsVector2(0, 0)
       Physics.maximumWeight = 100
-      Physics.airResistance = 1
+      Physics.airResistance = 5
       Physics.movementThreshold = 0.001
       Physics.correctAngles = true
       return Physics
