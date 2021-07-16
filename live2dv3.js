@@ -567,7 +567,7 @@
       Physics.gravity = new PhysicsVector2(0, -1)
       Physics.wind = new PhysicsVector2(0, 0)
       Physics.maximumWeight = 100
-      Physics.airResistance = 0
+      Physics.airResistance = 1
       Physics.movementThreshold = 0.001
       Physics.correctAngles = true
       return Physics
@@ -1495,7 +1495,7 @@
 
     load (name, v) {
       if (!this.models[name]) {
-        const modelDir = '/'
+        const modelDir = name + '/'
         const modelPath = name + '.model3.json'
         const textures = []
         let textureCount = 0
